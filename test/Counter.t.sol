@@ -15,7 +15,7 @@ contract TestContract is Test {
     function testInc() public {
         c.Increment();
         c.Increment();
-        assertEq(c.nums(), 102, "hell yeah");
+        assertEq(c.nums(), 102, "ok");
     }
 
 
