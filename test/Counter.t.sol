@@ -18,6 +18,12 @@ contract TestContract is Test {
         assertEq(c.nums(), 102, "ok");
     }
 
+    function testDecr() public {
+        c.Decrement();
+        c.Decrement();
+        assertEq(c.nums(), 98, "ok");
+    }
+
 
     
 }
