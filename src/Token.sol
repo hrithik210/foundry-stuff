@@ -28,4 +28,5 @@ contract Token is ERC20{
     require(to != address(0), "cannot transfer to zero address");
     _transfer(msg.sender,to , amount);
   }
+
 }
