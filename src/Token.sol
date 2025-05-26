@@ -22,4 +22,10 @@ contract Token is ERC20{
   function BalanceOf(address account) public view returns (uint){
     return balanceOf(account);
   }
+
+  function TranferTo(address to, uint amount) public {
+    require(BalanceOf(msg.sender) >= amount, "not enough funds");
+    require(to != address(0), "cannot transfer to zero address");
+    _transfer(msg.sender,to , amount);
+  }
 }

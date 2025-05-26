@@ -17,10 +17,19 @@ contract TestContract is Test {
     }
 
     function testMint() public {
-        c.mint(address(this), 100);
-        assertEq(c.BalanceOf(address(this)) , 100 , "ok");
+        c.mint(address(this), 1000);
+        assertEq(c.BalanceOf(address(this)) , 1000 , "ok");
        
     }
+
+    function testTransfer() public {
+        c.mint(address(this), 199);
+       
+        c.TranferTo(0x075c299cf3b9FCF7C9fD5272cd2ed21A4688bEeD, 100);
+        assertEq(c.BalanceOf(0x075c299cf3b9FCF7C9fD5272cd2ed21A4688bEeD), 100, "ok");
+       
+    }
+
 
 
     
