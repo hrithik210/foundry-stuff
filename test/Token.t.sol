@@ -44,6 +44,15 @@ contract TestContract is Test {
 
     }
 
+    function test_RevertIfApprovalsExceeded() public {
+    c.mint(address(this), 100);
+    c.approve(0x075c299cf3b9FCF7C9fD5272cd2ed21A4688bEeD, 10);
+
+    vm.prank(0x075c299cf3b9FCF7C9fD5272cd2ed21A4688bEeD);
+    vm.expectRevert(); 
+    c.transferFrom(address(this), 0x075c299cf3b9FCF7C9fD5272cd2ed21A4688bEeD, 20);
+}
+
 
     
 
