@@ -9,11 +9,11 @@ contract TestContract is Test {
     Token c;
 
     function setUp() public {
-        c = new Token();
+        c = new Token(0);
     }
 
     function testInit() public {
-        assertEq(2, 2, "ok");
+        assertEq(uint(2), uint(2), "ok");
     }
 
 
