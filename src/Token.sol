@@ -13,9 +13,13 @@ contract Token is ERC20{
     _mint(msg.sender , _initial_value);
   }
 
-  function mint(address to , uint amount) internal {
+  function mint(address to , uint amount) public {
     require(msg.sender == owner, "only owner can mint to some other address");
     require(to != address(0), "cannot mint to zero address");
     _mint(to , amount);
+  }
+
+  function BalanceOf(address account) public view returns (uint){
+    return balanceOf(account);
   }
 }

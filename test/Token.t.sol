@@ -16,6 +16,12 @@ contract TestContract is Test {
         assertEq(uint(2), uint(2), "ok");
     }
 
+    function testMint() public {
+        c.mint(address(this), 100);
+        assertEq(c.BalanceOf(address(this)) , 100 , "ok");
+       
+    }
+
 
     
 }
